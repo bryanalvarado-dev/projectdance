@@ -1,0 +1,93 @@
+/* src/components/AuthForm.css */
+
+.auth-container {
+    /* Propiedades de Flexbox para Centrado Total */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrado horizontal */
+    justify-content: center; /* Centrado vertical */
+
+    /* Asegura que ocupe toda la altura de la ventana */
+    min-height: 100vh;
+    width: 100%; /* Asegura que ocupe todo el ancho */
+
+    background-color: #f0f2f5;
+}
+
+.auth-logo {
+    color: #6a0dad;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.auth-form-card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.auth-title {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.auth-form input:focus {
+    border-color: #6a0dad;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(106, 13, 173, 0.1);
+}
+
+.auth-button {
+    background-color: #6a0dad;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.auth-button:hover {
+    background-color: #510a83;
+}
+
+.auth-error {
+    color: #a00000;
+    background-color: #ffe6e6;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border-left: 4px solid #a00000;
+}
+
+.auth-switch {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.switch-link {
+    color: #6a0dad;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+}
