@@ -1,0 +1,151 @@
+/* src/components/ChallengeCard.css (CÓDIGO COMPLETO Y CORREGIDO) */
+
+.challenges-list-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.challenge-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    /* Eliminamos el margin-bottom porque el gap en challenges-list-group ya lo maneja */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 280px; /* Aseguramos el ancho de la tarjeta */
+    text-align: left;
+}
+
+.challenge-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* AHORA EL TÍTULO TIENE UN MARGEN SUPERIOR PARA DAR ESPACIO A LOS BOTONES */
+.challenge-card h3 {
+    margin-top: 40px; /* Incrementado para dejar espacio a los botones */
+    color: #333333;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.challenge-card p {
+    color: #555555;
+    margin: 5px 0;
+}
+
+/* Estilos de Color por Dificultad */
+.challenge-card.fácil .difficulty-level {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.challenge-card.medio .difficulty-level {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.challenge-card.difícil .difficulty-level {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.challenge-card.muy.difícil .difficulty-level {
+    background-color: #d6b0e8;
+    color: #4a0070;
+}
+
+.difficulty-level {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+/* Estilos para el estado de Completado */
+.challenge-card.completed {
+    border-left: 5px solid #28a745;
+    opacity: 0.85;
+}
+
+/* --- SECCIÓN DE ACCIONES (Completado/Favorito) CORREGIDA --- */
+.card-actions {
+    position: absolute; /* Permite posicionamiento libre */
+    top: 15px; /* Separación desde arriba */
+    right: 15px; /* Separación desde la derecha */
+    display: flex;
+    gap: 8px; /* Espacio reducido entre los botones */
+    z-index: 10; /* Asegura que estén por encima de otros elementos de la tarjeta */
+}
+
+.completion-btn,
+.favorite-btn {
+    padding: 6px 10px; /* Relleno ajustado */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85em; /* Tamaño de fuente ajustado */
+    transition: background-color 0.2s;
+    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+    display: flex; /* Para centrar el contenido si es necesario */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+}
+
+/* Botón de Completado */
+.completion-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.completion-btn:hover {
+    background-color: #0056b3;
+}
+
+.challenge-card.completed .completion-btn {
+    background-color: #28a745; /* Verde si está completado */
+}
+
+/* Botón de Favorito */
+.favorite-btn {
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 1.2em; /* Icono de estrella más grande */
+    padding: 5px 8px; /* Relleno ajustado para la estrella */
+}
+
+.favorite-btn.is-favorite {
+    background-color: #ffc107;
+    color: white;
+}
+
+.favorite-btn:hover {
+    background-color: #ddd;
+}
+
+.favorite-btn.is-favorite:hover {
+    background-color: #e0a800;
+}
+
+/* --- Estilo para el Botón de Video --- */
+.video-button-link {
+    display: inline-block;
+    margin-top: 15px;
+    background: none;
+    border: none;
+    color: #8a2be2;
+    text-decoration: underline;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1em;
+}
+
+.video-button-link:hover {
+    color: #6a1ba5;
+}
