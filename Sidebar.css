@@ -1,0 +1,171 @@
+/* src/components/Sidebar.css - Versión Estable Final con Ancho Fijo */
+
+.sidebar {
+    width: 250px; /* CRÍTICO: Ancho fijo */
+    min-width: 250px; /* EVITA: que se haga más pequeño */
+    flex-shrink: 0; /* CRÍTICO: Impide que el navegador lo encoja */
+    background-color: white;
+    color: #333;
+    padding: 20px;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    border-right: 1px solid #eee;
+}
+
+.sidebar-header h1 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: #6a0dad; /* Púrpura principal */
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    text-transform: uppercase;
+}
+
+/* --- Información del Usuario --- */
+.sidebar-user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #6a0dad;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* --- Ajustes de Desbordamiento para la Estabilidad --- */
+.username-text,
+.user-email-text {
+    /* CRÍTICO: Si el texto es muy largo, se trunca y no expande el sidebar */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Muestra "..." */
+    white-space: nowrap;
+    min-width: 0;
+}
+
+.username-text {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #444;
+}
+
+.user-email-text {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* --- Navegación --- */
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    color: #555;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+
+    /* CRÍTICO: Asegura que el texto largo del enlace no expanda el sidebar */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sidebar-nav a:hover {
+    background-color: #f5f5f5;
+    color: #6a0dad;
+}
+
+.sidebar-nav a.active {
+    background-color: #6a0dad;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(106, 13, 173, 0.4);
+}
+
+.sidebar-nav a svg {
+    min-width: 20px;
+    color: inherit;
+}
+
+/* --- Footer / Cerrar Sesión --- */
+.sidebar-footer {
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.logout-button {
+    width: 100%;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.logout-button:hover {
+    background-color: #c0392b;
+}
+/* --- ESTILOS PARA NOTIFICACIONES --- */
+
+.notification-badge {
+    margin-left: auto; /* Mueve el badge a la derecha */
+    background-color: #e74c3c; /* Rojo brillante para llamar la atención */
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 12px;
+    min-width: 25px;
+    text-align: center;
+    line-height: 1;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(231, 76, 60, 0.5);
+    transition: transform 0.1s;
+}
+
+/* Ajuste para el estado activo */
+.sidebar-nav a.active .notification-badge {
+    background-color: white;
+    color: #6a0dad;
+    box-shadow: none;
+}
